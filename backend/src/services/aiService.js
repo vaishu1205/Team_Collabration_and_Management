@@ -46,7 +46,9 @@ class AIService {
 
     try {
       if (this.gemini) {
-        const model = this.gemini.getGenerativeModel({ model: "gemini-pro" });
+        const model = this.gemini.getGenerativeModel({
+          model: "gemini-1.5-flash",
+        });
         const result = await model.generateContent(prompt);
         return result.response.text();
       }

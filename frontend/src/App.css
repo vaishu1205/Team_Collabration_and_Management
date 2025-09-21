@@ -1,8 +1,25 @@
+/* Default root styles for dashboard/main app */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+/* Override for full-screen auth components */
+#root:has(.auth-fullscreen) {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  text-align: left !important;
+}
+
+/* Reset body flex when showing auth screens */
+body:has(.auth-fullscreen) {
+  display: block !important;
+  place-items: unset !important;
 }
 
 .logo {

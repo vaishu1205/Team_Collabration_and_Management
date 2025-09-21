@@ -82,56 +82,6 @@ io.on("connection", (socket) => {
 // Initialize database
 syncDatabase().then(() => {
   server.listen(PORT, () => {
-    console.log(`🚀 Server running on port http://localhost: ${PORT}`);
+    console.log(`🚀 Server running on port http://localhost:${PORT}`);
   });
 });
-
-// require("dotenv").config();
-// const express = require("express");
-// const cors = require("cors");
-// const sequelize = require("./config/database");
-// const { syncDatabase } = require("./models");
-// const authRoutes = require("./routes/auth");
-
-// const app = express();
-// const PORT = process.env.PORT || 3001;
-
-// // Middleware
-// app.use(cors());
-// app.use(express.json());
-
-// // Routes
-// app.use("/api/auth", authRoutes);
-// const projectRoutes = require("./routes/projects");
-// app.use("/api/projects", projectRoutes);
-// const taskRoutes = require("./routes/tasks");
-// app.use("/api/tasks", taskRoutes);
-
-// // Initialize database
-// const initializeDatabase = async () => {
-//   try {
-//     await sequelize.authenticate();
-//     console.log("✅ Database connected successfully");
-
-//     await syncDatabase();
-//     console.log("✅ All tables created successfully");
-//   } catch (error) {
-//     console.error("❌ Database initialization failed:", error);
-//   }
-// };
-
-// // Initialize database on startup
-// initializeDatabase();
-
-// // Test route
-// app.get("/", (req, res) => {
-//   res.json({
-//     message: "Team Collaboration API is working!",
-//     database: "Connected and synced",
-//     timestamp: new Date().toISOString(),
-//   });
-// });
-
-// app.listen(PORT, () => {
-//   console.log(`🚀 Server running on http://localhost:${PORT}`);
-// });
